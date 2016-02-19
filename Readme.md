@@ -5,40 +5,25 @@ Use SVG icons as react components.
 ## Usage
 
 ``` javascript
-var Icon = require('react-svg-icons');
+import Icon from 'react-svg-icons';
+import someIcon from './assets/some-icons.svg';
 
-<Icon name='icon-name'
-  width='256'
-  height='256'
-  color='#4cd695'/>
-```
+// ...
 
-## Configration
-
-You need to configure an asset directory from which all SVG icons will be read. These will be inlined when you browserify your bundle. In your package.json add:
-
-``` javascript
-  "react-svg-icons": {
-    "assetPath": "path/to/dir/containing/svgs"
-  }
-
+<Icon
+  path={someIcons}
+  width="20px"
+  height="25px"
+  color="#4cd695"
+/>
 ```
 
 ## Options
 
-## name
+## path
 
-Specifies which icon to use. Icon names are file paths relative to your assetPath, minus the .svg extension. If you have directory like:
+Specifies the path to the SVG
 
-```
-my-icon.svg
-nested/some other icon.svg
-```
-
-Your icons will be available under these names:
-
-- `name="my-icon"`
-- `name="nested/some other icon"`
 
 ## width and height
 
