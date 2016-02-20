@@ -30,6 +30,15 @@ export default class SVGIcon extends Component {
 
   defaultViewBox = '0 0 originalWidth originalHeight';
 
+  svgProps = [
+    'path',
+    'width',
+    'height',
+    'color',
+    'preserveAspectRatio',
+    'viewBox'
+  ];
+
   componentWillMount() {
     this.getSvgString(this.props.path);
   }
@@ -115,14 +124,9 @@ export default class SVGIcon extends Component {
   render() {
     if (this.state.svgString) {
       // Remove svg attributes
-      const props = Object.assign({}, this.props, {
-        path: undefined,
-        width: undefined,
-        height: undefined,
-        color: undefined,
-        preserveAspectRatio: undefined,
-        viewBox: undefined,
-      });
+      var props = Object.assign({}, this.props);
+      this.svgProps.forEach(propKey => delete props[propKey]);
+      delete props.style;
 
       return (
         <span
@@ -135,6 +139,7 @@ export default class SVGIcon extends Component {
             display: 'flex',
             width: this.props.width || 'auto',
             height: this.props.height || 'auto',
+            ...this.props.style,
           }}
           {...props}
         />
