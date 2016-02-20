@@ -1,15 +1,15 @@
 {
-  "name": "react-svg-icons",
-  "version": "0.4.0",
-  "description": "SVG icons as react components",
+  "name": "react-svgcon",
+  "version": "0.3.0",
+  "description": "React component for using SVGs as icons",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/publitas/react-svg-icons"
+    "url": "https://github.com/slightlytyler/react-svgcon"
   },
   "authors": [
-    "Felix Hageloh",
-    "Tyler Martinez"
+    "Tyler Martinez",
+    "Felix Hageloh"
   ],
   "scripts": {
     "test": "node_modules/tap/bin/run.js test/*.js",
@@ -42,8 +42,5 @@
     "react-addons-test-utils": "^0.14.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
-  },
-  "peerDependencies": {
-    "react": "^0.13.0 || ^0.14.0-a"
   }
 }

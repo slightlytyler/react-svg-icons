@@ -1,17 +1,17 @@
-# React SVG Icons
+# React SVGcon
 
-Use SVG icons as react components.
+Use SVGs as icons
 
 ## Usage
 
 ``` javascript
-import Icon from 'react-svg-icons';
-import someIcon from './assets/some-icons.svg';
+import Icon from 'react-svgcon';
+import someIcon from 'assets/some-icon.svg';
 
 // ...
 
 <Icon
-  path={someIcons}
+  path={someIcon}
   width="20px"
   height="25px"
   color="#4cd695"
