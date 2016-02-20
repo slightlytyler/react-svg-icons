@@ -6,6 +6,9 @@ Use SVGs as icons
 
 `npm install react-svgcon --save`
 
+
+With webpack usage should look like:
+
 ``` javascript
 import Icon from 'react-svgcon';
 import someIcon from 'assets/some-icon.svg';
@@ -19,6 +22,7 @@ import someIcon from 'assets/some-icon.svg';
   color="#4cd695"
 />
 ```
+
 
 ## Options
 
