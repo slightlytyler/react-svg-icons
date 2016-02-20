@@ -4,6 +4,8 @@ Use SVGs as icons
 
 ## Usage
 
+`npm install react-svgcon --save`
+
 ``` javascript
 import Icon from 'react-svgcon';
 import someIcon from 'assets/some-icon.svg';
