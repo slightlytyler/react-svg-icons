@@ -87,8 +87,8 @@ export default class SVGIcon extends Component {
     // Set width and height
     svg.removeAttribute('width');
     svg.removeAttribute('height');
-    svg.style.width = '100%';
-    svg.style.height = '100%';
+    svg.style.width = 'inherit';
+    svg.style.height = 'inherit';
   }
 
   colorize(node) {
