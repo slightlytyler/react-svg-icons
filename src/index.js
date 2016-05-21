@@ -135,10 +135,7 @@ export default class SVGIcon extends Component {
           }}
           className="icon"
           style={{
-            display: 'inline-block',
-            display: 'flex',
-            width: this.props.width || 'auto',
-            height: this.props.height || 'auto',
+            color: 'currentColor',
             ...this.props.style,
           }}
           {...props}
