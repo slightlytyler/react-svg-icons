@@ -20,7 +20,7 @@ export default class SVGIcon extends Component {
   };
 
   static defaultProps = {
-    color: 'black',
+    color: 'currentColor',
     preserveAspectRatio: 'xMidYMid meet',
   };
 
@@ -89,6 +89,7 @@ export default class SVGIcon extends Component {
     svg.removeAttribute('height');
     svg.style.width = 'inherit';
     svg.style.height = 'inherit';
+    svg.style.display = 'block';
   }
 
   colorize(node) {
@@ -134,10 +135,7 @@ export default class SVGIcon extends Component {
             __html: this.processSvg(this.state.svgString, this.props.color)
           }}
           className="icon"
-          style={{
-            color: 'currentColor',
-            ...this.props.style,
-          }}
+          style={this.props.style}
           {...props}
         />
       );
