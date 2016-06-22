@@ -39,7 +39,7 @@ export default class SVGIcon extends Component {
     'viewBox'
   ];
 
-  componentDidMount() {
+  componentWillMount() {
     this.getSvgString(this.props.path);
   }
 

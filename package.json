@@ -1,6 +1,6 @@
 {
   "name": "react-svgcon",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "React component for using SVGs as icons",
   "main": "dist/index.js",
   "repository": {
@@ -14,7 +14,7 @@
   "scripts": {
     "test": "node_modules/tap/bin/run.js test/*.js",
     "build": "webpack",
-    "watch": "webpack --watch",
+    "dev": "webpack --watch",
     "prepublish": "npm run build"
   },
   "jest": {
