@@ -89,7 +89,7 @@ export default class SVGIcon extends Component {
     svg.removeAttribute('height');
     svg.style.width = 'inherit';
     svg.style.height = 'inherit';
-    svg.style.display = 'block';
+    svg.style.display = 'inline-block';
   }
 
   colorize(node) {
