@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 export default class SVGIcon extends Component {
   static propTypes = {
-    path: PropTypes.string.isRequired,
+    svg: PropTypes.string.isRequired,
     width: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.string,
@@ -24,10 +24,6 @@ export default class SVGIcon extends Component {
     preserveAspectRatio: 'xMidYMid meet',
   };
 
-  state = {
-    svgString: undefined,
-  };
-
   defaultViewBox = '0 0 originalWidth originalHeight';
 
   svgProps = [
@@ -39,30 +35,8 @@ export default class SVGIcon extends Component {
     'viewBox'
   ];
 
-  componentWillMount() {
-    this.getSvgString(this.props.path);
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (this.props.path !== newProps.path) {
-      this.getSvgString(newProps.path)
-    }
-  }
-
-  getSvgString(path) {
-    if (path) {
-      const ajax = new XMLHttpRequest();
-
-      ajax.open("GET", path, true);
-      ajax.send();
-      ajax.onload = () => this.setState({
-        svgString: ajax.responseText
-      });
-    }
-  }
-
-  processSvg(svgString) {
-    const node = new DOMParser().parseFromString(svgString, 'image/svg+xml');
+  processSvg(svg) {
+    const node = new DOMParser().parseFromString(svg, 'image/svg+xml');
 
     this.normalize(node);
     this.colorize(node);
@@ -123,7 +97,7 @@ export default class SVGIcon extends Component {
   }
 
   render() {
-    if (this.state.svgString) {
+    if (this.props.svg) {
       // Remove svg attributes
       var props = Object.assign({}, this.props);
       this.svgProps.forEach(propKey => delete props[propKey]);
@@ -132,7 +106,7 @@ export default class SVGIcon extends Component {
       return (
         <span
           dangerouslySetInnerHTML={{
-            __html: this.processSvg(this.state.svgString, this.props.color)
+            __html: this.processSvg(this.props.svg, this.props.color)
           }}
           className="icon"
           style={this.props.style}
