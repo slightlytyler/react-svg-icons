@@ -1,6 +1,6 @@
 {
   "name": "react-svgcon",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "React component for using SVGs as icons",
   "main": "dist/index.js",
   "repository": {
@@ -8,8 +8,7 @@
     "url": "https://github.com/slightlytyler/react-svgcon"
   },
   "authors": [
-    "Tyler Martinez",
-    "Felix Hageloh"
+    "Tyler Martinez"
   ],
   "scripts": {
     "test": "node_modules/tap/bin/run.js test/*.js",
