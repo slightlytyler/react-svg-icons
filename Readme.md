@@ -1,13 +1,13 @@
 # React SVGcon
 
-Use SVGs as icons
+Use SVGs as icons.
 
 ## Usage
 
 `npm install react-svgcon --save`
 
 
-With webpack [raw-loader]() setup to handle the icon svg's usage should look like:
+With webpack [raw-loader](https://github.com/webpack/raw-loader) setup to handle the icon svg's usage should look like:
 
 ``` javascript
 import Icon from 'react-svgcon';
