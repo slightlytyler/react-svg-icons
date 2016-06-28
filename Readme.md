@@ -7,7 +7,7 @@ Use SVGs as icons
 `npm install react-svgcon --save`
 
 
-With webpack usage should look like:
+With webpack [raw-loader]() setup to handle the icon svg's usage should look like:
 
 ``` javascript
 import Icon from 'react-svgcon';
@@ -16,7 +16,7 @@ import someIcon from 'assets/some-icon.svg';
 // ...
 
 <Icon
-  path={someIcon}
+  svg={someIcon}
   width="20px"
   height="25px"
   color="#4cd695"
@@ -26,9 +26,9 @@ import someIcon from 'assets/some-icon.svg';
 
 ## Options
 
-## path
+## svg
 
-Specifies the path to the SVG
+Raw string representing the SVG.
 
 
 ## width and height
@@ -72,4 +72,4 @@ function chooseColor(type, original) {
 
 ## other options
 
-Of course you can pass any other standard property, such as `style` and event handlers.
+Of course you can pass any other standard property, such as `style` and event handlers. Icon can be colorized using the style attr `color` on the `Icon` element.
