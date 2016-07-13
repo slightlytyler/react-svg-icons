@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class SVGIcon extends Component {
+export default class SVGCon extends Component {
   static propTypes = {
     svg: PropTypes.string.isRequired,
     width: PropTypes.oneOfType([
@@ -27,7 +27,7 @@ export default class SVGIcon extends Component {
   defaultViewBox = '0 0 originalWidth originalHeight';
 
   svgProps = [
-    'path',
+    'svg',
     'width',
     'height',
     'color',
@@ -99,8 +99,8 @@ export default class SVGIcon extends Component {
   render() {
     if (this.props.svg) {
       // Remove svg attributes
-      var props = Object.assign({}, this.props);
-      this.svgProps.forEach(propKey => delete props[propKey]);
+      const props = Object.assign({}, this.props);
+      this.svgProps.forEach(svgProp => delete props[svgProp]);
       delete props.style;
 
       return (
@@ -109,8 +109,12 @@ export default class SVGIcon extends Component {
             __html: this.processSvg(this.props.svg, this.props.color)
           }}
           className="icon"
-          style={this.props.style}
-          {...props}
+          style={{
+            width: this.props.width,
+            height: this.props.height,
+            ...this.props.style
+          }}
+          { ...props }
         />
       );
     }
