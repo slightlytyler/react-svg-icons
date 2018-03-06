@@ -61,9 +61,6 @@ export default class SVGCon extends Component {
     // Set width and height
     svg.removeAttribute('width');
     svg.removeAttribute('height');
-    svg.style.width = 'inherit';
-    svg.style.height = 'inherit';
-    svg.style.display = 'block';
   }
 
   colorize(node) {
@@ -105,16 +102,10 @@ export default class SVGCon extends Component {
 
       return (
         <span
+          { ...props }
           dangerouslySetInnerHTML={{
             __html: this.processSvg(this.props.svg, this.props.color)
           }}
-          className="icon"
-          style={{
-            width: this.props.width,
-            height: this.props.height,
-            ...this.props.style
-          }}
-          { ...props }
         />
       );
     }
