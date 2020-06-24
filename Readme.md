@@ -7,7 +7,7 @@ Use SVGs as icons.
 `npm install react-svgcon --save`
 
 
-With webpack [raw-loader](https://github.com/webpack/raw-loader) setup to handle the icon svg's usage should look like:
+With webpack [raw-loader](https://github.com/webpack/raw-loader) set up to handle the icon SVGs. Usage should look like:
 
 ``` javascript
 import Icon from 'react-svgcon';
@@ -33,13 +33,13 @@ Raw string representing the SVG.
 
 ## width and height
 
-Sets the width and height. By default the aspect ration will be preserved. You can use `preserveAspectRatio` to override this behavior.
+Sets the width and height. By default the aspect ratio will be preserved. You can use `preserveAspectRatio` to override this behavior.
 These properties have no effect when there is no viewBox set on the SVG element.
 
 
 ## viewBox
 
-Usually you don't have to set this property, unless the original SVG doesn't define a viewBox. In that case width and height won't work. You will have to set a viewBox like `"0 0 originalWidth originalHeight"`
+Usually you don't have to set this property unless the original SVG doesn't define a viewBox. In that case, width and height won't work. You will have to set a viewBox like `"0 0 originalWidth originalHeight"`
 
 
 ## preserveAspectRatio
